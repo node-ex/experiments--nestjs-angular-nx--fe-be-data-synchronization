@@ -18,6 +18,10 @@ module.exports = {
       ],
       rules: {
         '@typescript-eslint/no-extraneous-class': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+        ],
       },
     },
     {
