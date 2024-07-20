@@ -1,0 +1,5 @@
+GET http://localhost:3000/api/rest-api
+
+###
+
+GET http://localhost:4200/api/rest-api
