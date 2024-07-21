@@ -10,7 +10,8 @@ import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    // PTODO: Test what this does
+    // Set if you always want your application to exit without waiting for HTTP requests to end
+    // https://docs.nestjs.com/faq/keep-alive-connections
     forceCloseConnections: true,
   });
   app.enableShutdownHooks();
