@@ -1,3 +1,27 @@
 import { Route } from '@angular/router';
+import { HomeViewComponent } from '../views/home-view/home-view.component';
 
-export const appRoutes: Route[] = [];
+export const appRoutes: Route[] = [
+  {
+    path: '',
+    component: HomeViewComponent,
+  },
+  {
+    path: 'rest-api',
+    loadComponent: () =>
+      import('../views/rest-api-view/rest-api-view.component').then(
+        (c) => c.RestApiViewComponent,
+      ),
+  },
+  {
+    path: 'sse',
+    loadComponent: () =>
+      import('../views/sse-view/sse-view.component').then(
+        (c) => c.SseViewComponent,
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
+];

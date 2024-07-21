@@ -2,13 +2,13 @@ import { Component, OnInit, signal, OnDestroy, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-sse',
+  selector: 'app-sse-view',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './sse.component.html',
-  styleUrl: './sse.component.css',
+  templateUrl: './sse-view.component.html',
+  styleUrl: './sse-view.component.css',
 })
-export class SseComponent implements OnInit, OnDestroy {
+export class SseViewComponent implements OnInit, OnDestroy {
   messages = signal<string[]>([]);
   private messageCount = 0;
   private maxMessages = 6;

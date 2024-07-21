@@ -2,16 +2,16 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map, Observable } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-rest-api',
+  selector: 'app-rest-api-view',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './rest-api.component.html',
-  styleUrl: './rest-api.component.css',
+  templateUrl: './rest-api-view.component.html',
+  styleUrl: './rest-api-view.component.css',
 })
-export class RestApiComponent {
+export class RestApiViewComponent {
   http = inject(HttpClient);
   message = toSignal(
     this.http
