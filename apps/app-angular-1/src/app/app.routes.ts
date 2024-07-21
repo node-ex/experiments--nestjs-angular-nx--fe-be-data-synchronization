@@ -21,6 +21,13 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'websockets-socketio',
+    loadComponent: () =>
+      import(
+        '../views/websockets-socketio-view/websockets-socketio-view.component'
+      ).then((c) => c.WebsocketsSocketioViewComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
