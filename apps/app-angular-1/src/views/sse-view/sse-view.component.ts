@@ -19,7 +19,9 @@ export class SseViewComponent implements OnInit, OnDestroy {
   );
 
   ngOnInit(): void {
-    this.eventSource = new EventSource('http://localhost:4200/api/sse');
+    this.eventSource = new EventSource(
+      'http://localhost:4200/api/sse?clientId=123',
+    );
 
     this.readyStateNumber.set(this.eventSource.readyState);
     console.log('EventSource not started', this.readyStateName());

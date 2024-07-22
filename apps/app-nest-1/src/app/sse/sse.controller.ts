@@ -1,4 +1,4 @@
-import { Controller, Sse } from '@nestjs/common';
+import { Controller, Query, Sse } from '@nestjs/common';
 import {
   concatMap,
   delay,
@@ -14,7 +14,8 @@ import {
 export class SseController {
   @Sse()
   // Must return an Observable stream
-  getMessages(): Observable<MessageEvent> {
+  getMessages(@Query('clientId') clientId: string): Observable<MessageEvent> {
+    console.log(`Client with clientId ${clientId} connected`);
     return interval(1000).pipe(
       take(5), // Limit to 5 emissions
       map(
