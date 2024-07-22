@@ -18,6 +18,7 @@ export class WebsocketsSocketioViewComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.socket = io('http://localhost:4200', {
       path: '/api/websockets-socketio',
+      transports: ['websocket'],
     });
 
     this.socket.on('connect', () => {

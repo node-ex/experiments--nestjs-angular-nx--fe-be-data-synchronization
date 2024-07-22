@@ -5,6 +5,7 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { IoAdapter } from '@nestjs/platform-socket.io';
 
 import { AppModule } from './app/app.module';
 
@@ -14,6 +15,8 @@ async function bootstrap() {
     // https://docs.nestjs.com/faq/keep-alive-connections
     forceCloseConnections: true,
   });
+  // IoAdapter from @nestjs/platform-socket.io is the default adapter
+  // app.useWebSocketAdapter(new IoAdapter(app));
   app.enableShutdownHooks();
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
