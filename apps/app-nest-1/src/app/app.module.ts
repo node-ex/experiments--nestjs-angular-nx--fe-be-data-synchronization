@@ -11,8 +11,8 @@ import { WebsocketsWsModule } from './websockets-ws/websockets-ws.module';
   imports: [
     RestApiModule,
     SseModule,
-    // WebsocketsSocketioModule,
-    WebsocketsWsModule,
+    WebsocketsSocketioModule,
+    // WebsocketsWsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
