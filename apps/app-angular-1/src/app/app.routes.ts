@@ -28,6 +28,13 @@ export const appRoutes: Route[] = [
       ).then((c) => c.WebsocketsSocketioViewComponent),
   },
   {
+    path: 'websockets-ws',
+    loadComponent: () =>
+      import('../views/websockets-ws-view/websockets-ws-view.component').then(
+        (c) => c.WebsocketsWsViewComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
