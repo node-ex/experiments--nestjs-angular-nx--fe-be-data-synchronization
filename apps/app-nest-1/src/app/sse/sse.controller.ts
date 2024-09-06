@@ -1,4 +1,4 @@
-import { Controller, Query, Sse } from '@nestjs/common';
+import { Controller, MessageEvent, Query, Sse } from '@nestjs/common';
 import {
   concatMap,
   delay,
